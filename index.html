@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page Title and Favicon -->
+    <title>Yobot - Virtual Assistant</title>
+    <link rel="shortcut icon" href="avatar.png" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- Inline Styles -->
+    <style>
+        .button-container button {
+            white-space: nowrap;
+            overflow: visible;
+            text-overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Application Section -->
+    <section class="main" style="display: none;">
+        <!-- Loading Animation -->
+        <div class="loader">
+            <div class="circle c1"></div>
+            <div class="circle c2"></div>
+            <div class="circle c3"></div>
+            <div class="circle c4"></div>
+            <div class="circle c5"></div>
+        </div>
+        
+        <!-- Application Content -->
+        <div class="app-content">
+            <!-- Image and Title Section -->
+            <div class="image-container">
+                <div class="image">
+                    <img src="giphy.gif" alt="Yobot Assistant" loading="lazy">
+                </div>
+                <h1>Y O B O T</h1>
+                <p>How may I help you?</p>
+            </div>
+            
+            <!-- Voice Input Button -->
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="input talk" style="margin: 0; padding: 12px 20px; border-radius: 8px;">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h1 class="content" style="margin: 0 0 0 8px; font-size: 16px;">Click here to speak</h1>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Button and Dialog -->
+    <button class="help-button">HELP</button>
+    <div class="dialog-box" id="helpDialog">
+        <h2>Help Menu</h2>
+        <div class="dialog-content">
+            <p style="color: #EAEAEA; margin-bottom: 20px; line-height: 1.5; font-size: small;">
+                Explore the dropdown menus below to discover all the features and commands available to enhance your experience with this AI-powered assistant.
+            </p>
+            
+            <!-- Help Menu with Dropdowns -->
+            <ul class="help-menu">
+                <!-- Greetings Section -->
+                <li class="menu-item">
+                    <button class="dropdown-toggle"><strong>Greetings</strong><i class="fas fa-chevron-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li>Hey</li>
+                        <li>Hello</li>
+                    </ul>
+                </li>
+                
+                <!-- Website Opening Section -->
+                <li class="menu-item">
+                    <button class="dropdown-toggle"><strong>Open Websites</strong><i class="fas fa-chevron-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li>Open Google</li>
+                        <li>Open YouTube</li>
+                        <li>Open Facebook</li>
+                    </ul>
+                </li>
+                
+                <!-- Search Section -->
+                <li class="menu-item">
+                    <button class="dropdown-toggle"><strong>Search Information</strong><i class="fas fa-chevron-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li>What is [query]?</li>
+                        <li>Who is [query]?</li>
+                        <li>What are [query]?</li>
+                        <li>Wikipedia [query]</li>
+                    </ul>
+                </li>
+                
+                <!-- Time and Date Section -->
+                <li class="menu-item">
+                    <button class="dropdown-toggle"><strong>Time and Date</strong><i class="fas fa-chevron-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li>What is the time?</li>
+                        <li>What is the date?</li>
+                    </ul>
+                </li>
+                
+                <!-- Utilities Section -->
+                <li class="menu-item">
+                    <button class="dropdown-toggle"><strong>Utilities</strong><i class="fas fa-chevron-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li>Open calculator</li>
+                    </ul>
+                </li>
+                
+                <!-- Stop Listening Option -->
+                <li class="menu-item stop">Stop listening</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 Developed by Yosmos</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="app.js"></script>
+</body>
+
+</html>

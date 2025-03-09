@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+code, pre, .monospace {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.main {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    background: #0A0A1A; /* Dark Navy background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 150px; /* Prevent content from being hidden behind footer */
+}
+
+.main .image-container {
+    padding: 10px;
+}
+
+.main .image-container .image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .image-container .image img {
+    width: 350px;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.main .image-container .image img.loaded {
+    opacity: 1;
+}
+
+.main .image-container h1 {
+    color: #00AEEF; /* Electric Blue */
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.main .image-container p {
+    color: #EAEAEA; /* Cool White */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 50px;
+    border-radius: 20px;
+    background: rgba(0, 174, 239, 0.1); /* Electric Blue with transparency */
+    border: 1px solid #00AEEF; /* Electric Blue border */
+}
+
+.main .input .talk {
+    background: #0A0A1A; /* Dark Navy */
+    border: 2px solid #00AEEF; /* Electric Blue */
+    outline: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.main .input .talk:hover {
+    background: #00AEEF; /* Electric Blue */
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 174, 239, 0.8);
+}
+
+.main .input .talk i {
+    font-size: 20px;
+    color: #00AEEF; /* Electric Blue */
+    transition: color 0.3s ease;
+}
+
+.main .input .talk:hover i {
+    color: #0A0A1A; /* Dark Navy */
+}
+
+.main .input .content {
+    color: #EAEAEA; /* Cool White */
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+.footer {
+    width: 100%;
+    background: #0A0A1A; /* Dark Navy matching main background */
+    color: #EAEAEA; /* Cool White */
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.help-button {
+    position: fixed;
+    bottom: 90px; /* Adjusted from 20px to account for footer */
+    right: 20px;
+    z-index: 1000; /* Ensure it's above the footer */
+    border-radius: 0.8rem;
+    background: #00AEEF; /* Solid Electric Blue */
+    padding: 10px 20px;
+    color: #EAEAEA; /* Cool White */
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 174, 239, 0.5); /* Electric Blue glow */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.help-button:hover {
+    background: #0088CC; /* Darker Electric Blue for hover */
+    box-shadow: 0 0 20px rgba(0, 174, 239, 0.8); /* Stronger glow on hover */
+}
+
+.dialog-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: #121212;
+    color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid #232323;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+.dialog-box h2 {
+    color: #00AEEF;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.help-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    margin: 6px 0;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-toggle {
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    color: #EAEAEA;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.dropdown-toggle:hover {
+    background: rgba(0, 174, 239, 0.1); /* Electric Blue with transparency */
+    border-radius: 8px;
+}
+
+.dropdown-content {
+    list-style: none;
+    padding: 0 0 0 15px;
+    margin: 3px 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.dropdown-content li {
+    color: #EAEAEA;
+    cursor: default;
+    padding: 8px 0;
+    font-size: 13px;
+    transition: none;
+}
+
+.dropdown-content li:hover {
+    color: #EAEAEA;
+    padding-left: 0;
+}
+
+.menu-item:last-child {
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 8px;
+    background: rgba(0, 174, 239, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.menu-item:last-child:hover {
+    background: rgba(0, 174, 239, 0.2);
+}
+
+.menu-item.active .dropdown-content {
+    max-height: 200px;
+}
+
+.menu-item.active .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.stop {
+    border: 2px solid #353535;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 68, 0.5);
+    transition: all 0.3s ease;
+    color: #ff8888;
+    font-weight: bold;
+    background: #ff8a8a;
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+.stop:hover {
+    background: #ff0044;
+    border-color: #ff0044;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 0, 68, 0.8);
+}
+
+.input.talk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    padding: 10px;
+    background: #0A0A1A; /* Dark Navy */
+    border: 2px solid #00AEEF; /* Electric Blue */
+    border-radius: 20px;
+    color: #EAEAEA; /* Cool White */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 174, 239, 0.3);
+}
+
+.input.talk:hover {
+    background: #00AEEF; /* Electric Blue */
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 174, 239, 0.8);
+    color: #0A0A1A; /* Dark Navy */
+}
+
+.input.talk:hover i.fas.fa-microphone-alt {
+    color: #0A0A1A; /* Dark Navy */
+    transform: scale(1.1);
+}
+
+.input.talk i.fas.fa-microphone-alt {
+    font-size: 24px;
+    color: #00AEEF; /* Electric Blue */
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 70%;
+    background: rgba(18, 18, 18, 0.8);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #232323;
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 0 10px rgba(0, 174, 239, 0.5));
+    z-index: 1000;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 350px 445px;
+    border: 5px solid;
+    position: absolute;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.c1 {
+    animation: rota 2.2s linear infinite;
+    border-color: #00AEEF;
+    opacity: 0.8;
+    box-shadow: 0 0 15px rgba(0, 174, 239, 0.6);
+}
+
+.c2 {
+    animation: rota 3s linear infinite;
+    border-color: #0A0A1A;
+    opacity: 0.6;
+    box-shadow: 0 0 10px rgba(10, 10, 26, 0.4);
+}
+
+.c3 {
+    animation: rota 2s linear infinite;
+    border-color: #FFFFFF;
+    opacity: 0.5;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.c4 {
+    animation: rota 1s linear infinite;
+    border-color: #00AEEF;
+    opacity: 0.3;
+    box-shadow: 0 0 8px rgba(0, 174, 239, 0.4);
+}
+
+.c5 {
+    animation: rota 1.5s linear infinite;
+    border-color: #FFFFFF;
+    opacity: 0.2;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes rota {
+    100% {
+        transform: rotate(360deg);
+        filter: drop-shadow(0 0 8px rgba(0, 174, 239, 0.6));
+    }
+}
+
+.app-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
