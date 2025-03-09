@@ -2,6 +2,8 @@
 
 Yobot is a cutting-edge virtual assistant designed to respond to your voice commands and assist you with various tasks. Built using web technologies, Yobot offers a seamless interactive experience directly in your browser. Whether you need to quickly search the web, open websites, get the current time or date, or even use a calculator, Yobot is here to help, all through the power of voice commands.
 
+<img align="right" height="200" style="border-radius: 50%;" src="giphy.gif" />
+
 ## Project Goals
 
 The primary goals of the Yobot project are to:
