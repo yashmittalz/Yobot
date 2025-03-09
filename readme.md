@@ -1,7 +1,5 @@
 # Yobot - Your Virtual Assistant
 
-## Overview
-
 Yobot is a cutting-edge virtual assistant designed to respond to your voice commands and assist you with various tasks. Built using web technologies, Yobot offers a seamless interactive experience directly in your browser. Whether you need to quickly search the web, open websites, get the current time or date, or even use a calculator, Yobot is here to help, all through the power of voice commands.
 
 ## Project Goals
@@ -37,10 +35,6 @@ Yobot is built using the following technologies:
 *   **Web Speech API:** Enables voice recognition and text-to-speech functionalities.
 *   **Font Awesome:** Used for icons to enhance the user interface.
 *   **Google Fonts:** Utilized for stylish and readable typography.
-
-**Browser Compatibility:**
-
-As a web-based application, Yobot requires a modern web browser with support for the Web Speech API. It is recommended to use the latest versions of browsers like **Chrome, Firefox, or Edge** for optimal performance.
 
 ## Project Background
 
@@ -98,7 +92,7 @@ For a comprehensive list and examples, please refer to the in-app "HELP" menu.
 
 ## Acknowledgements
 
-*   This project utilizes the **Web Speech API** for voice recognition and synthesis, a powerful browser-based technology.
+*   This project utilizes the **Web Speech API** for voice recognition and synthesis.
 *   Icons are provided by **Font Awesome**.
 *   Fonts are served by **Google Fonts**.
 
@@ -108,5 +102,5 @@ This project is open-source and available under the [MIT License](LICENSE). Feel
 
 ## Author
 
-Developed by **Yash Mittal** - 2025
+Developed by **Yash Mittal** - 2024
 
